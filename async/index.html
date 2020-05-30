@@ -15,7 +15,7 @@
       
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.1">
     
     
       
@@ -23,7 +23,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.a2408e81.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.71dfd922.min.css">
       
       
     
@@ -334,13 +334,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#unix-domain-sockets" class="md-nav__link">
-    Unix Domain Sockets
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -527,13 +520,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#unix-domain-sockets" class="md-nav__link">
-    Unix Domain Sockets
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -708,19 +694,6 @@ the <code>httpx.AsyncClient</code> class allows you to call directly into ASGI w
 
 
 <p>See <a href="https://asgi.readthedocs.io/en/latest/specs/www.html#connection-scope">the ASGI documentation</a> for more details on the <code>client</code> and <code>root_path</code> keys.</p>
-<h2 id="unix-domain-sockets">Unix Domain Sockets</h2>
-<p>The async client provides support for connecting through a unix domain socket via the <code>uds</code> parameter. This is useful when making requests to a server that is bound to a socket file rather than an IP address.</p>
-<p>Here's an example requesting the Docker Engine API:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">httpx</span>
-
-
-<span class="k">async</span> <span class="k">with</span> <span class="n">httpx</span><span class="o">.</span><span class="n">AsyncClient</span><span class="p">(</span><span class="n">uds</span><span class="o">=</span><span class="s2">&quot;/var/run/docker.sock&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
-    <span class="c1"># This request will connect through the socket file.</span>
-    <span class="n">resp</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;http://localhost/version&quot;</span><span class="p">)</span>
-</code></pre></div>
-
-
-<p>This functionality is not currently available in the synchronous client.</p>
                 
               
               
